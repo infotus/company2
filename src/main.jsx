@@ -8,7 +8,9 @@ import {
 } from "react-router-dom";
 import Contact from "../src/components/Pages/Contact/Contact.jsx"
 import Home from "../src/components/Pages/Home/Home.jsx"
-import Applayout from './components/Applayout/Applayout.jsx';
+import Applayout from './components/Applayout/Applayout.jsx'
+import ProjectNoe from './components/Pages/Noe-Talk/ProjectNoe.jsx'
+import Projects from './components/Pages/Projects/Projects.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "/noe-talk",
+        element: <ProjectNoe />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
       },
       {
         path: "contact",
