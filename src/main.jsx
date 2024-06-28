@@ -9,9 +9,9 @@ import {
 import Contact from "../src/components/Pages/Contact/Contact.jsx"
 import Home from "../src/components/Pages/Home/Home.jsx"
 import Applayout from './components/Applayout/Applayout.jsx'
-import Projects from "../src/components/Pages/Projects/Projects.jsx" 
-import NoeTalk from '../src/components/Pages/Noe-Talk/ProjectNoe.jsx'
- 
+import ProjectNoe from './components/Pages/Noe-Talk/ProjectNoe.jsx'
+import Projects from './components/Pages/Projects/Projects.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,12 +22,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "projects",
-        element: <Projects />,
+        path: "/noe-talk",
+        element: <ProjectNoe />,
       },
       {
-        path: "noe-talk",
-        element: <NoeTalk />,
+        path: "/projects",
+        element: <Projects />,
       },
       {
         path: "contact",
