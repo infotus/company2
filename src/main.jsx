@@ -5,11 +5,13 @@ import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from "react-router-dom"
 import Contact from "../src/components/Pages/Contact/Contact.jsx"
 import Home from "../src/components/Pages/Home/Home.jsx"
-import Applayout from './components/Applayout/Applayout.jsx';
-
+import Applayout from './components/Applayout/Applayout.jsx'
+import Projects from "../src/components/Pages/Projects/Projects.jsx" 
+import NoeTalk from '../src/components/Pages/Noe-Talk/ProjectNoe.jsx'
+ 
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "projects",
+        element: <Projects />,
+      },
+      {
+        path: "noe-talk",
+        element: <NoeTalk />,
       },
       {
         path: "contact",

@@ -1,85 +1,97 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+// import logoImage from "../asserts/images/logoImage.jpg";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-export default function Header() {
-    return (
-        <header className="shadow sticky z-50 top-0">
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link to="/" className="flex items-center">
-                        <img
-                            src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                            className="mr-3 h-12"
-                            alt="Logo"
-                        />
-                    </Link>
-                    <div
-                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-                        id="mobile-menu-2"
-                    >
-                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                            <li>
-                                <NavLink
-                                to="/"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/about"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    About
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/contact"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Contact
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/github"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Github
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/user"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
-                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    User
-                                </NavLink>
-                            </li>
-                            
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
-}
+const Navbar = () => {
+  const [menu, setMenu] = useState(false);
+  // function to display menu
+  const handleMenu = () => {
+    setMenu(!menu);
+  };
 
+   // function to make the navLinks disappear when clicked on the small screen
+   const handleNavLinkDisappear = () => {
+    setMenu(false);
+  };
+
+  return (
+    <React.Fragment>
+      <section className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <nav className="w-full h-12 px-5 flex items-center justify-between md:w-4/5 md:mx-auto">
+          <div>
+            {/* <img src={logoImage} alt="logo" className="w-12 h-12" /> */}
+          </div>
+
+          <div className="text-2xl text-black md:hidden">
+            {menu === false ? (
+              <AiOutlineMenu onClick={handleMenu} />
+            ) : (
+              <AiOutlineClose onClick={handleMenu} />
+            )}
+          </div>
+
+          {/* large screen */}
+          <nav className="hidden md:block md:container pl-10">
+          <div className="flex justify-between text-xl">
+              <div className="flex text-black space-x-4">
+              <Link to="/">
+                  <p className=''>Home</p>
+                </Link>
+                <Link to="projects">
+                  <p className=''>Projects</p>
+                </Link>
+                <Link to="noe-talk">
+                  <p className=''>Noe-Talk</p>
+                </Link>
+                <Link to="contact">
+                  <p className=''>Contact</p>
+                </Link>
+               
+              </div>
+              <div>
+              <Link to="joinUs">
+                  <p className=" capitalize bg-green-400 w-32 text-center rounded-md">
+                    join us
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </nav>
+        </nav>
+
+
+
+
+        {/* mobile screen */}
+        <nav className='md:hidden'>
+          {menu && (
+            <div className="text-xl border-t text-white mx-5">
+              <div className="space-y-6 py-4 ">
+              <Link to="/">
+                  <p className='' onClick={handleNavLinkDisappear} >Home</p>
+                </Link>
+                <Link to="projects">
+                  <p className='mt-2' onClick={handleNavLinkDisappear}>Projects</p>
+                </Link>
+                <Link to="noe-talk">
+                  <p className='mt-2' onClick={handleNavLinkDisappear}>Noe-Talk</p>
+                </Link>
+                <Link to="contact">
+                  <p className='mt-2'onClick={handleNavLinkDisappear} >Contact</p>
+                </Link>
+                {/* <Link to="joinUs">
+                  <p className="mt-4 capitalize bg-green-400 w-32 text-center rounded-md" onClick={handleNavLinkDisappear}>
+                    join us
+                  </p>
+                </Link> */}
+              </div>
+            </div>
+          )}
+        </nav>
+      </section>
+    </React.Fragment>
+  );
+};
+
+export default Navbar;
