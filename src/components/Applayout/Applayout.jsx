@@ -5,10 +5,12 @@ import Footer from '../Footer/Footer'
 
 function Applayout() {
   return (
+
     <>
       <Header />
       <Outlet />
       <Footer />
+
     </>
   )
 }
