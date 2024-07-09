@@ -10,7 +10,6 @@ function Applayout() {
       <Header />
       <Outlet />
       <Footer />
-
     </>
   )
 }

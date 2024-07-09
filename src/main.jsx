@@ -1,16 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+
 import Contact from "../src/components/Pages/Contact/Contact.jsx"
 import Home from "../src/components/Pages/Home/Home.jsx"
 import Applayout from './components/Applayout/Applayout.jsx'
 import ProjectNoe from './components/Pages/Noe-Talk/ProjectNoe.jsx'
-import Projects from './components/Pages/Projects/Projects.jsx'
+import About from './components/Pages/About.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,8 +23,8 @@ const router = createBrowserRouter([
         element: <ProjectNoe />,
       },
       {
-        path: "/projects",
-        element: <Projects />,
+        path: "/about",
+        element: <About />,
       },
       {
         path: "contact",
