@@ -13,7 +13,6 @@ import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/company2/",
   css: {
     postcss: {
       plugins: [tailwindcss()],
