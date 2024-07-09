@@ -12,9 +12,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
-  base: process.env.GITHUB_PAGES  
-  ? "company2"            
-  : "./", 
+  // base: "/company2/",
   plugins: [react()],
   css: {
     postcss: {
