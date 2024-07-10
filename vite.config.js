@@ -12,8 +12,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
-  // base: "/company2/",
   plugins: [react()],
+  // base: "/company2/",
   css: {
     postcss: {
       plugins: [tailwindcss()],
