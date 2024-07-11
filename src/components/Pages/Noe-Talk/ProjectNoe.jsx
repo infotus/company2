@@ -5,20 +5,20 @@ function ProjectNoe() {
   return (
     <div >
       <section className='h-[50%] w-full pt-20 pb-10'>
-        <p className="p-10 test-center py-8">
+        <span className=' flex items-center justify-center text-lg '> NOE-TALK</span>
+        <div className='grid grid-cols-2 gap-4'>
+        <p className="p-5 test-center w-[50%]">
           "We are excited to announce the launch of our new AI Conversation feature Noe-bot, designed to enhance user interactions and streamline communication. This innovative tool leverages advanced artificial intelligence to provide real-time, intuitive responses, making it easier than ever to get the information you need."
         </p>
+
+        <img src={noeimg} alt="/" className="p-1 w-[50%]"/>
+        </div>
       </section>
-      <div className="relative flex justify-center items-center h-auto w-[60%] shadow-xl shadow-gray-400 rounded-xl group hover:bg-gradient-to-r from-gray-200 to-[#001b5e] left-[20%]">
-          <img src={noeimg} alt="/" className="p-10 rounded-xl group-hover:opacity-10"/>
-          <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-              <h3 className="p-5 text-2xl font-bold text-white tracking-wider text-center">
-                  Noe-Talk
-              </h3>
-              <a href="/">
-                  <p className="text-center p-3 rounded-lg bg-white text-gray-700 font-bold cursor-pointer font-lg">More Info</p>
-              </a>
-          </div>
+      <div className='grid grid-cols-2 gap-4'>
+        <p className='p-5 test-center w-[50%]'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem distinctio officia mollitia possimus delectus alias? Delectus saepe cumque quam officia explicabo sapiente illo deserunt! Natus unde dolor ab magnam harum.
+        </p>
+        <img src= {noeimg} alt="" className='p-2' />
       </div>
     </div>
   )
