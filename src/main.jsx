@@ -7,7 +7,7 @@ import Contact from "../src/components/Pages/Contact/Contact.jsx"
 import Home from "../src/components/Pages/Home/Home.jsx"
 import Applayout from './components/Applayout/Applayout.jsx'
 import ProjectNoe from './components/Pages/Noe-Talk/ProjectNoe.jsx'
-import About from './components/Pages/About.jsx'
+import About from './components/Pages/About/About.jsx'
 
 const router = createBrowserRouter([
   {
