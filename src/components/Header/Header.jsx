@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo-dark1.png'
+import logo from '../../assets/Logo-white-transparent.webp'
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
       <section className="bg-cyan-400 rounded-lg shadow m-4 dark:bg-cyan-800">
         <nav className="w-full h-12 px-5 flex items-center justify-between md:w-4/5 md:mx-auto">
           <div className="flex flex-row">
-            <img src={logo} alt="logo" className="w-12 h-12 rounded-lg p-1" />
+            <img src={logo} alt="logo" className="w-12 h-12 rounded-lg p-2" />
             <span className="text-center text-2xl font-bold text-gray-100 p-2 ">HiViAi</span> 
           </div>
             
