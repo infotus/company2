@@ -10,29 +10,31 @@ import ProjectNoe from './components/Pages/Noe-Talk/ProjectNoe.jsx'
 import About from './components/Pages/About/About.jsx'
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Applayout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "/noe-talk",
-        element: <ProjectNoe />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
+    {
+      path: "/",
+      element: <Applayout />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "/noe-talk",
+          element: <ProjectNoe />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL }
+);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
